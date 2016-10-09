@@ -4,6 +4,7 @@ import java.awt.event.*;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
+import com.mongodb.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -19,7 +20,6 @@ public class guiTest extends JDialog {
 
     //mongo configuration
     //db integration
-
 
 
     public guiTest() {
@@ -73,28 +73,38 @@ public class guiTest extends JDialog {
             System.out.println("Connect to database successfully");
             DBCollection coll = db.getCollection("xmldatenBasis");
             System.out.println("Collection selected successfully");
-            // filehandler
-            FileWriter fw = new Filewriter("test.xml");
-            BufferedWriter bw = new BufferedWriter(fw);
+
+
 
             // DBObject query = new BasicDBObject("id","1").append("id","1");
             BasicDBObject b1 = new BasicDBObject();
             DBObject query = new BasicDBObject("name", "zen").append("speed",
-                    new BasicDBObject("$gt",30));
-            query.put("id","1");
-            BasicDBObject fields = new BasicDBObject("id",2);
-            DBCursor cur = coll.find(new BasicDBObject("id",1));
+                    new BasicDBObject("$gt", 30));
+            query.put("id", "1");
+            BasicDBObject fields = new BasicDBObject("id", 2);
+            DBCursor cur = coll.find(new BasicDBObject("id", 1));
+
+            DBObject doc = coll.findOne(query);
+            System.out.println((String) cur.one().get("xmldata"));
+            xmldata = (String) cur.one().get("xmldata");
+            try {
+                Files.write(Paths.get("test.xml"), xmldata.getBytes("UTF-8"));
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
 
-
-            //DBObject query = new BasicDBObject("id","1");
-
-
-        }
 
         guiTest dialog = new guiTest();
         dialog.pack();
         dialog.setVisible(true);
         System.exit(0);
+    } catch(
+    Exception e)
+
+    {
+        System.err.println(e.getClass().getName() + ": " + e.getMessage());
     }
+  }
 }
