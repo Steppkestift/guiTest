@@ -21,6 +21,9 @@ public class appGUITesttool extends JFrame {
         menu1 = new JMenu();
         menuItem1 = new JMenuItem();
         menu2 = new JMenu();
+        tabbedPane1 = new JTabbedPane();
+        scrollPane1 = new JScrollPane();
+        list1 = new JList();
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -47,6 +50,19 @@ public class appGUITesttool extends JFrame {
         }
         setJMenuBar(menuBar1);
 
+        //======== tabbedPane1 ========
+        {
+
+            //======== scrollPane1 ========
+            {
+
+                scrollPane1.setViewportView(list1);
+            }
+            tabbedPane1.addTab("Auswahl DB", scrollPane1);
+        }
+        contentPane.add(tabbedPane1);
+        tabbedPane1.setBounds(5, 5, 370, 235);
+
         { // compute preferred size
             Dimension preferredSize = new Dimension();
             for(int i = 0; i < contentPane.getComponentCount(); i++) {
@@ -71,6 +87,9 @@ public class appGUITesttool extends JFrame {
     private JMenu menu1;
     private JMenuItem menuItem1;
     private JMenu menu2;
+    private JTabbedPane tabbedPane1;
+    private JScrollPane scrollPane1;
+    private JList list1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     public static void main(String[] args) {
