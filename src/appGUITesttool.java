@@ -19,6 +19,8 @@ public class appGUITesttool extends JFrame {
         // Generated using JFormDesigner Evaluation license - Heiko Linke
         menuBar1 = new JMenuBar();
         menu1 = new JMenu();
+        menuItem1 = new JMenuItem();
+        menu2 = new JMenu();
 
         //======== this ========
         Container contentPane = getContentPane();
@@ -30,8 +32,18 @@ public class appGUITesttool extends JFrame {
             //======== menu1 ========
             {
                 menu1.setText("Einstellungen");
+
+                //---- menuItem1 ----
+                menuItem1.setText("DB-Konfig");
+                menu1.add(menuItem1);
             }
             menuBar1.add(menu1);
+
+            //======== menu2 ========
+            {
+                menu2.setText("Testdaten");
+            }
+            menuBar1.add(menu2);
         }
         setJMenuBar(menuBar1);
 
@@ -57,6 +69,8 @@ public class appGUITesttool extends JFrame {
     // Generated using JFormDesigner Evaluation license - Heiko Linke
     private JMenuBar menuBar1;
     private JMenu menu1;
+    private JMenuItem menuItem1;
+    private JMenu menu2;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     public static void main(String[] args) {
