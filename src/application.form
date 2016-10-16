@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="application">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="142ae" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+        <constraints/>
+        <properties/>
+      </component>
+      <component id="7fea5" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+        <constraints/>
+        <properties/>
+      </component>
+    </children>
+  </grid>
+</form>

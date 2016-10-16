@@ -27,7 +27,7 @@ public class InsertDocumentApp {
             // 1. BasicDBObject example
             System.out.println("BasicDBObject example...");
             BasicDBObject document = new BasicDBObject();
-            document.put("database", "mkyongDB");
+            document.put("database", "test1");
             document.put("table", "hosting");
 
             BasicDBObject documentDetail = new BasicDBObject();
@@ -48,7 +48,7 @@ public class InsertDocumentApp {
             // 2. BasicDBObjectBuilder example
             System.out.println("BasicDBObjectBuilder example...");
             BasicDBObjectBuilder documentBuilder = BasicDBObjectBuilder.start()
-                    .add("database", "mkyongDB")
+                    .add("database", "test1")
                     .add("table", "hosting");
 
             BasicDBObjectBuilder documentBuilderDetail = BasicDBObjectBuilder.start()
@@ -70,7 +70,7 @@ public class InsertDocumentApp {
             // 3. Map example
             System.out.println("Map example...");
             Map<String, Object> documentMap = new HashMap<String, Object>();
-            documentMap.put("database", "mkyongDB");
+            documentMap.put("database", "test1");
             documentMap.put("table", "hosting");
 
             Map<String, Object> documentMapDetail = new HashMap<String, Object>();
