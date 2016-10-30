@@ -12,6 +12,7 @@ public class TabbedMaxSize {
 
     public TabbedMaxSize() {
 
+
         JPanel boxPanel1 = new JPanel();
         JPanel boxPanel2 = new JPanel();
         JPanel boxPanel3 = new JPanel();
@@ -60,12 +61,12 @@ public class TabbedMaxSize {
                 int z = 0;
                 Integer anzahl = Integer.parseInt(clipRect.getText());
                 for (int i = 1; i <= anzahl; i++)
-                {
+                {   contrllabels[i] = new JLabel("clip: " + i);
                     test[i] = new JTextField("txt");
                     z = z + 40;
-                    test[i].setBounds(130,z,100,20);
-                 //   contrllabels[i].setBounds(10,z,100,20);
-                 //   boxPanel1.add(contrllabels[i]);
+                    test[i].setBounds(130,z,80,20);
+                    contrllabels[i].setBounds(10,z,50,20);
+                    boxPanel1.add(contrllabels[i]);
                     boxPanel1.add(test[i]);
 
 
@@ -92,8 +93,6 @@ public class TabbedMaxSize {
         boxPanel2.add(box2);
         JScrollPane panel1Scroll = new JScrollPane(boxPanel1);
         JScrollPane panel2Scroll = new JScrollPane(boxPanel2);
-
-
 
         panel1Scroll.createVerticalScrollBar();
         panel1Scroll.setBounds(10,170,300,300);
