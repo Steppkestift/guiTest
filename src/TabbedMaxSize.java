@@ -3,6 +3,7 @@
  */
 import java.awt.BorderLayout;
 import javax.swing.*;
+import java.awt.*;
 
 public class TabbedMaxSize {
     JTabbedPane tabbedPane;
@@ -21,7 +22,7 @@ public class TabbedMaxSize {
         JLabel hallo = new JLabel("huhudssdsdsdsdsd");
         JTextField clipRect = new JTextField("10");
         JLabel[] contrllabels= new JLabel[8];
-        JTextField[] test = new JTextField[8];
+        JTextField[] test = new JTextField[1000];
         JButton button = new JButton("Klick");
         contrllabels[0] = new JLabel("SCF Type: ");
         test[0] = new JTextField("test 1");
@@ -41,15 +42,37 @@ public class TabbedMaxSize {
         test [6] = new JTextField("bla");
         test [7] = new JTextField("bla");
 
-        int z = 0;
-        for (int i = 1; i < 7; i++) {
-            z = z + 40;
-            test[i].setBounds(130,z,100,20);
-            contrllabels[i].setBounds(10,z,100,20);
-            boxPanel1.add(contrllabels[i]);
-            boxPanel1.add(test[i]);
-        }
+     //   int z = 0;
+     //   for (int i = 1; i < 7; i++) {
+     //       z = z + 40;
+     //       test[i].setBounds(130,z,100,20);
+     //       contrllabels[i].setBounds(10,z,100,20);
+     //       boxPanel1.add(contrllabels[i]);
+     //       boxPanel1.add(test[i]);
+     //   }
 
+        button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent e)
+            {
+               // JPanel boxPanel1 = new JPanel();
+                boxPanel1.removeAll();
+                boxPanel1.repaint();
+                int z = 0;
+                Integer anzahl = Integer.parseInt(clipRect.getText());
+                for (int i = 1; i <= anzahl; i++)
+                {
+                    test[i] = new JTextField("txt");
+                    z = z + 40;
+                    test[i].setBounds(130,z,100,20);
+                 //   contrllabels[i].setBounds(10,z,100,20);
+                 //   boxPanel1.add(contrllabels[i]);
+                    boxPanel1.add(test[i]);
+
+
+                }
+                System.out.println("test");
+            }
+        });
         // add labels to second box
         Box box2 = Box.createVerticalBox();
         for (int i = 1; i <= 100; i++) {
@@ -60,13 +83,19 @@ public class TabbedMaxSize {
         hallo.setText("cliprectangles");
         hallo.setBounds(1,110,100,20);
         clipRect.setBounds(150,120,100,20);
-        boxPanel1.setBounds(80,80,300,100);
+        boxPanel1.setBounds(80,80,500,500);
+        boxPanel1.setAutoscrolls(true);
+        boxPanel1.setPreferredSize(new Dimension (400,400));
         button.setBounds(270,120,100,20);
        // boxPanel3.setBounds(10,10,100,100);
         // boxPanel3.add(hallo);
         boxPanel2.add(box2);
         JScrollPane panel1Scroll = new JScrollPane(boxPanel1);
         JScrollPane panel2Scroll = new JScrollPane(boxPanel2);
+
+
+
+        panel1Scroll.createVerticalScrollBar();
         panel1Scroll.setBounds(10,170,300,300);
         panel2Scroll.setBounds(70,70,300,300);
 
