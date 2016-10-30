@@ -10,13 +10,16 @@ import javax.swing.*;
  * @author Heiko Linke
  */
 public class appGUITesttool extends JFrame {
+    JButton testButton = new JButton("test");
+    JTextField txtFeld = new JTextField("anzahl");
+
     public appGUITesttool() {
         initComponents();
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Heiko Linke
+        // Generated using JFormDesigner non-commercial license
         menuBar1 = new JMenuBar();
         menu1 = new JMenu();
         menuItem1 = new JMenuItem();
@@ -55,7 +58,6 @@ public class appGUITesttool extends JFrame {
 
             //======== scrollPane1 ========
             {
-
                 scrollPane1.setViewportView(list1);
             }
             tabbedPane1.addTab("Auswahl DB", scrollPane1);
@@ -79,10 +81,56 @@ public class appGUITesttool extends JFrame {
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
+
+
+
+        testButton.addActionListener(new java.awt.event.ActionListener() {
+            // Beim Drücken des Menüpunktes wird actionPerformed aufgerufen
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                // Dateiauswahldialog wird erzeugt...
+                JFrame   testFrame    = new JFrame("test");
+                JButton  testButton   = new JButton("Klick");
+                JTextField txtField1  = new JTextField("ClipRectangles");
+                testFrame.setLayout(null);
+             //   JButton test1 = new JButton("Klick");
+
+                JLabel[] contrllabels= new JLabel[8];
+                contrllabels[0] = new JLabel("SCF Type: ");
+                contrllabels[1] = new JLabel("Units: ");
+                contrllabels[2] = new JLabel("Spherical Harmonics: ");
+                contrllabels[3] = new JLabel("Molecular Charge: ");
+                contrllabels[4] = new JLabel("PP: ");
+                contrllabels[5] = new JLabel("DFT Type: ");
+                contrllabels[6] = new JLabel("Max Iterations: ");
+                contrllabels[7] = new JLabel("Mult: ");
+                testButton.setBounds(10,10,100,20);
+
+
+
+                int y = 0;
+                for(int i = 0;i<contrllabels.length;i++){
+                    // c.gridy = i;
+                    y = y + 10;
+                    contrllabels[i].setBounds(50,y,200,20);
+                    testFrame.add(contrllabels[i]);
+                }
+
+               // test1.setBounds(20,20,100,20);
+               // testFrame.add(test1);
+                testFrame.setLocation(100,100);
+                testFrame.pack();
+                testFrame.setVisible(true);
+                testFrame.setSize(500,500);
+
+
+            }
+        });
     }
 
+
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Heiko Linke
+    // Generated using JFormDesigner non-commercial license
     private JMenuBar menuBar1;
     private JMenu menu1;
     private JMenuItem menuItem1;

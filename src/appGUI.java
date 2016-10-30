@@ -28,7 +28,7 @@ public class appGUI extends JFrame {
 
 
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Heiko Linke
+        // Generated using JFormDesigner non-commercial license
         menuBar1 = new JMenuBar();
         menu1 = new JMenu();
         menu2 = new JMenu();
@@ -82,7 +82,7 @@ public class appGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Heiko Linke
+    // Generated using JFormDesigner non-commercial license
     private JMenuBar menuBar1;
     private JMenu menu1;
     private JMenu menu2;
